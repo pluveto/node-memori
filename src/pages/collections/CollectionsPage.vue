@@ -84,6 +84,7 @@
   
 
     <h4 class="title is-4">未激活的卡片</h4>
+    <b-button @click="activateThisPage()">激活本页卡片</b-button>
     <table class="table" style="width: 100%">
       <tr>
         <th style="width: 20px">状态</th>
@@ -241,6 +242,12 @@ export default {
         console.log(data)
       })
     },
+    activateThisPage(){
+      for(var i = 0; i < this.cardsInactivated.length; i++){
+        var current = this.cardsInactivated[i];
+        this.updateActivate(1,current.id);
+      }
+    },
     refetchCardsInactivated() {
       back.getCardsByActivation(
         this.$route.params.id,
@@ -334,6 +341,9 @@ export default {
   watch: {
     "pagination.current": function() {
       this.refetchCards();
+    },
+    "paginationForInactivated.current": function() {
+      this.refetchCardsInactivated();
     }
   }
 };

@@ -37,8 +37,9 @@ export default {
       console.log("focus");
     });
   },
-   mounted() {
+  mounted() {
     window.addEventListener("keydown", this.shortcut);
+    console.log("bind key");
   },
   destroyed() {
     window.removeEventListener("keydown", this.shortcut);
@@ -64,8 +65,9 @@ export default {
         return text
           .replace(" ", "")
           .replace("-", "")
-          .replace(')', "")          
-          .replace("'", "")          
+          .replace(')', "")
+          .replace("'", "")
+          .replace("/", "")
           .replace('(', "")
           .replace('œ', "oe")
           .trim().toLowerCase();

@@ -70,19 +70,42 @@ export default {
       vue.collection = data;
     });
   },
+  mounted() {
+    window.addEventListener("keydown", this.shortcut);
+  },
+  destroyed() {
+    window.removeEventListener("keydown", this.shortcut);
+  },
   methods: {
+    shortcut: function(e) {
+      if (e.keyCode == 112) { //f1
+        this.queryWord(this.card.spell,'fr');
+        e.preventDefault()
+      }
+      if (e.keyCode == 113) { //f2
+        this.queryWord(this.card.spell,'en');
+        e.preventDefault()
+      }
+        if (e.keyCode == 114) { //f3
+        this.submit();
+        e.preventDefault()
+      }
+    },
     queryWord(spell, lang){
       console.log("query " + spell)
       back.queryWord(spell, lang, (data)=>{
         this.card.pos = data.pos
         this.card.translation = data.translation
         this.card.spell = data.spell
-        this.card.addition = data.addition
+        this.card.addition = data.addition == undefined?"":a.addition
         console.log(data);
       })
     },
     submit() {
       // TODO: Check empty
+      if(this.card.spell==""||this.card.translation==""){
+        return;
+      }
       var vue = this;
       back.addCard(this.$route.params.id, this.card, function(data) {
         console.log(data);
