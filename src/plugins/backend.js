@@ -241,7 +241,7 @@ export default {
 
                 then({
                     pos: pos,
-                    translation: res.data[0].label.replace(/n\.(f|m)/g, "n.??").replace(regex, '_'),
+                    translation: res.data[0].label.replace(regex,""),
                     spell: res.data[0].value
                 })
             })
