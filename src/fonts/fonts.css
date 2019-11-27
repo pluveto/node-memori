@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Merriweather';
+    font-style: normal;
+    font-weight: 400;
+    src: url(Merriweather_400_normal.eot); /* http://fonts.gstatic.com/s/merriweather/v21/u-440qyriQwlOrhSvowK_l5-fCZI.eot */
+    src: local('☺'),
+        url(Merriweather_400_normal.eot?#iefix) format('embedded-opentype'), /* http://fonts.gstatic.com/s/merriweather/v21/u-440qyriQwlOrhSvowK_l5-fCZI.eot */
+        url(Merriweather_400_normal.woff2) format('woff2'), /* http://fonts.gstatic.com/s/merriweather/v21/u-440qyriQwlOrhSvowK_l5-fCZM.woff2 */
+        url(Merriweather_400_normal.woff) format('woff'), /* http://fonts.gstatic.com/s/merriweather/v21/u-440qyriQwlOrhSvowK_l5-fCZK.woff */
+        url(Merriweather_400_normal.ttf) format('truetype'), /* http://fonts.gstatic.com/s/merriweather/v21/u-440qyriQwlOrhSvowK_l5-fCZJdeX3rg.ttf */
+        url(Merriweather_400_normal.svg#Merriweather_400_normal) format('svg'); /* http://fonts.gstatic.com/l/font?kit=u-440qyriQwlOrhSvowK_l5-fCZL&skey=379c1eccf863c625&v=v21#Merriweather */
+}
