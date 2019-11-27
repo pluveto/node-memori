@@ -1,7 +1,7 @@
 <template>
   <div class="card memori-card" style>
     <br />
-    <h3 class="title is-3 word">{{card.translation}}</h3>
+    <h3 class="title is-3 word">{{card.pos.replace(/n\.(f|m)\./g, "n.?? ") + card.translation}}</h3>
     <div class="card-center">请根据中文拼写单词</div>
     <table width="100%" style="table-layout:fixed;flex: 0 1 40px;">
       <tr>
@@ -64,8 +64,10 @@ export default {
         return text
           .replace(" ", "")
           .replace("-", "")
-          .replace(')', "")
+          .replace(')', "")          
+          .replace("'", "")          
           .replace('(', "")
+          .replace('œ', "oe")
           .trim().toLowerCase();
       };
       if (filter(this.status.myAnswer) == filter(this.card.spell)) {
